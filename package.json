@@ -17,7 +17,9 @@
         "test:update": "jest --forceExit --coverage --verbose --detectOpenHandles --update-snapshot",
         "watch-test": "jest --watch",
         "loadFixtures": "node ./fixtures/loadFixtures.js",
-        "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js --config src/ormconfig.ts"
+        "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js --config src/ormconfig.ts",
+        "migration:generate": "npm run typeorm migration:generate -- -n migration -d src/migration",
+        "migration:run": "npm run typeorm migration:run"
     },
     "jest": {
         "testEnvironment": "node",

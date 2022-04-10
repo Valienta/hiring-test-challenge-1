@@ -11,6 +11,7 @@ async function saveMessage(ctx: Context): Promise<void> {
   const msg = MessageService.createMessage(data);
 
   getConnection().manager.save(msg);
+  ctx.status = StatusCodes.OK;
 }
 
 async function getMessagesBetweenTwoDates(ctx: Context): Promise<void> {
@@ -24,6 +25,7 @@ async function getMessagesBetweenTwoDates(ctx: Context): Promise<void> {
               .getMany();
   
   ctx.body = await msgs;
+  ctx.status = StatusCodes.OK;
 }
 
 async function getMessagesByAlienLeader(ctx: Context): Promise<void> {
@@ -36,6 +38,7 @@ async function getMessagesByAlienLeader(ctx: Context): Promise<void> {
               .getMany();
   
   ctx.body = await msgs;
+  ctx.status = StatusCodes.OK;
 }
 
 async function getMessageByType(ctx: Context): Promise<void> {
@@ -48,6 +51,7 @@ async function getMessageByType(ctx: Context): Promise<void> {
               .getMany();
   
   ctx.body = await msgs;
+  ctx.status = StatusCodes.OK;
 }
 
 async function getMessageByIsValid(ctx: Context): Promise<void> {
@@ -60,7 +64,7 @@ async function getMessageByIsValid(ctx: Context): Promise<void> {
               .getMany();
   
   ctx.body = await msgs;
-  
+  ctx.status = StatusCodes.OK;
 }
 
 async function updateMessage(ctx: Context): Promise<void> {
@@ -77,6 +81,7 @@ async function updateMessage(ctx: Context): Promise<void> {
               .execute();
   
   ctx.body = await msgs;
+  ctx.status = StatusCodes.OK;
 }
 
 

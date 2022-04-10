@@ -75,5 +75,6 @@ export default {
     isOrderAsc,
     hasThreeConsonants,
     hasSameFirstLetter,
-    createMessage
+    createMessage,
+    wordToArray
 };

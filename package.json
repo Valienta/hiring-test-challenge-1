@@ -4,7 +4,7 @@
     "description": "..",
     "main": "dist/server.js",
     "scripts": {
-        "watch-server": "npm run check-node && nodemon --watch src -e ts,tsx --exec ts-node src/server.ts",
+        "watch-server": "npm run nodemon src/server.ts",
         "tsc": "tsc",
         "clean:dist": "rm -rf dist",
         "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet",
@@ -19,7 +19,8 @@
         "loadFixtures": "node ./fixtures/loadFixtures.js",
         "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js --config src/ormconfig.ts",
         "migration:generate": "npm run typeorm migration:generate -- -n migration -d src/migration",
-        "migration:run": "npm run typeorm migration:run"
+        "migration:run": "npm run typeorm migration:run",
+        "nodemon": "npx nodemon"
     },
     "jest": {
         "testEnvironment": "node",
@@ -35,9 +36,10 @@
     "repository": "",
     "devDependencies": {
         "@types/jest": "^26.0.23",
-        "@types/koa__cors": "^3.0.2",
+        "@types/koa-bodyparser": "^4.3.7",
         "@types/koa-router": "^7.4.2",
-        "@types/node": "^12.19.8",
+        "@types/koa__cors": "^3.0.2",
+        "@types/node": "^12.20.47",
         "@types/shelljs": "^0.8.0",
         "@typescript-eslint/eslint-plugin": "^2.20.0",
         "@typescript-eslint/parser": "^2.20.0",
